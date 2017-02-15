@@ -1,5 +1,37 @@
 $(document).ready(function(){
-  var colorArray = [{name: "red", number: 0  }, {name: "green", number: 1 }, {name: "yellow", number: 2 }, {name: "blue", number: 3 }];
+
+// this array sets the color, order, and number of buttons
+  var colorArray = ['red', 'green', 'yellow', 'blue'];
+
+// this appends the buttons on DOM load based on the colorArray
+  for (var i = 0; i < colorArray.length; i++) {
+    var button = $('<button>');
+    button.text(i);
+    button.data('index', i);
+    button.css('background-color', colorArray[i]);
+    $('#blockRow').append(button);
+  }
+
+// using the randomNumber function to pick a random index
+var randomButtonIndex = randomNumber(0, colorArray.length-1);
+
+// listens for click on a button
+$('button').on('click', function(){
+
+    var clickedButtonIndex = $(this).data().index;
+    var nameOfCo
+})
+
+
+
+
+
+
+
+
+
+
+
   var pick = randomNumber(0, 3);
 
   console.log(pick);
