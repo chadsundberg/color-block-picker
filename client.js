@@ -1,12 +1,14 @@
 // this array sets the starting colors and number of buttons
-  var colorArray = ['red', 'green', 'yellow', 'blue'];
+  var colorArray = ['red', 'green', 'yellow', 'blue', 'aqua', 'magenta', 'pink', 'white', 'purple'];
   var randomColor = '';
   var numberOfColors = 4;
 
 $(document).ready(function(){
 
-  addBlocksToPage();
+  addBlocksToPage();  // calling this function on page load adds blocks to the page
 
+
+// this is the primary game logic.  It gets the data from the clicked color button, which stores the color name, and compares that to the color prompted.
   $('#colorBlockContainer').on('click', '.colorBlock', function(){
     var colorOfBlockSelected = $(this).data().colorOfBlock;
     $('#colorChosen').text(colorOfBlockSelected);
@@ -19,9 +21,24 @@ $(document).ready(function(){
   });
 
 
+// this operates the adding of new color buttons, which are all stored in the colorArray
+  $('#addColorButton').on('click', function(){
+    numberOfColors++;
+    addBlocksToPage();
+  });
+
+
+// this operates the removal of color buttons
+  $('#removeColorButton').on('click', function(){
+    numberOfColors--;
+    addBlocksToPage();
+  });
+
 
 });
 
+
+// this is the code that runs the color prompt. It runs every time.
 chooseNewRandomColor();
 
   function randomNumber(min, max){
@@ -34,10 +51,7 @@ chooseNewRandomColor();
     $('#userColorPrompt').text(randomColor);
   }
 
-
-
   function addBlocksToPage(){
-
     // this empties colors from the page first
     $('#colorBlockContainer').empty();
 
