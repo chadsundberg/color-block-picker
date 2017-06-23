@@ -5,4 +5,5 @@ body {
   display: inline-block;
   height: 120px;
   width: 120px;
+  border-radius: 10px;
 }
