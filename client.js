@@ -7,18 +7,34 @@ $(document).ready(function(){
 
   addBlocksToPage();  // calling this function on page load adds blocks to the page
 
+  // $('.colorBlock').bind('click', function(){
+  //   highlightBlock();
+  // });
+
 
 // this is the primary game logic.  It gets the data from the clicked color button, which stores the color name, and compares that to the color prompted.
   $('#colorBlockContainer').on('click', '.colorBlock', function(){
     
     var colorOfBlockSelected = $(this).data().colorOfBlock;
-    var $chosenBlock = $(this);
-    setToHighlight($chosenBlock);
+
+    var bg = $('colorBlock').css('background-color');
+
+    setTimeout(
+      $(this).css('background-color', '#836A65'), 1000);
+
+      clearTimeout();
+
+    //  $(this).css('background-color', '#colorChosen');
+
+    // var $chosenBlock = $(this);
+    // setToHighlight($chosenBlock);
 
     // setTimeout(function() { 
     //   var $chosenBlock = $(this);
     //   $chosenBlock.addClass('selectedBlock');
     // }, 2000);
+
+    // highlightBlock();
 
     $('#colorChosen').text(colorOfBlockSelected);
     
@@ -77,12 +93,20 @@ chooseNewRandomColor();
   chooseNewRandomColor();
 }
 
-function setToHighlight ()
-{
-  setTimeout(function(){
-  $chosenBlock.addClass('selectedBlock');
-  }, 2000)
-}
+// function highlightBlock() {
+//   setTimeout(function(){ $(this).colorBlock.addClass('selectedBlock'); }, 2000);
+// }
+
+// function changeBlock() {
+//   $('.colorBlock').highlightBlock();
+// }
+
+// function setToHighlight ()
+// {
+//   setTimeout(function(){
+//   $chosenBlock.addClass('selectedBlock');
+//   }, 2000)
+// }
 
 
 
