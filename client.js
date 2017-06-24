@@ -17,24 +17,13 @@ $(document).ready(function(){
     
     var colorOfBlockSelected = $(this).data().colorOfBlock;
 
-    var bg = $('colorBlock').css('background-color');
+    var $this = $(this); // stores the contents of $(this) into the variable $this, so that I can use it in the setTimeout method
 
-    setTimeout(
-      $(this).css('background-color', '#836A65'), 1000);
+    $(this).css('background-color', '#836A65'); // highlights the block when clicked
 
-      clearTimeout();
-
-    //  $(this).css('background-color', '#colorChosen');
-
-    // var $chosenBlock = $(this);
-    // setToHighlight($chosenBlock);
-
-    // setTimeout(function() { 
-    //   var $chosenBlock = $(this);
-    //   $chosenBlock.addClass('selectedBlock');
-    // }, 2000);
-
-    // highlightBlock();
+    setTimeout(function(){
+        $this.css('background-color', colorOfBlockSelected ); // changes the color back to the original color after 2 seconds
+    }, 2000);
 
     $('#colorChosen').text(colorOfBlockSelected);
     
@@ -46,6 +35,9 @@ $(document).ready(function(){
     };
     
   });
+
+
+
 
 
 // this operates the adding of new color buttons, which are all stored in the colorArray
@@ -60,7 +52,6 @@ $(document).ready(function(){
     numberOfColors--;
     addBlocksToPage();
   });
-
 
 });
 

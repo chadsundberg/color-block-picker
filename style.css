@@ -1,12 +1,14 @@
 body {
   font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
+
+.selectedBlock {
+  background-color: #836A65;
+}
+
 .colorBlock {
   display: inline-block;
   height: 120px;
   width: 120px;
   border-radius: 10px;
-}
-.selectedBlock {
-  background-color: #836A65;
 }
