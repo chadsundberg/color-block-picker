@@ -10,14 +10,25 @@ $(document).ready(function(){
 
 // this is the primary game logic.  It gets the data from the clicked color button, which stores the color name, and compares that to the color prompted.
   $('#colorBlockContainer').on('click', '.colorBlock', function(){
+    
     var colorOfBlockSelected = $(this).data().colorOfBlock;
+    var $chosenBlock = $(this);
+    setToHighlight($chosenBlock);
+
+    // setTimeout(function() { 
+    //   var $chosenBlock = $(this);
+    //   $chosenBlock.addClass('selectedBlock');
+    // }, 2000);
+
     $('#colorChosen').text(colorOfBlockSelected);
+    
     if (randomColor == colorOfBlockSelected) {
       $('#answerText').text("That's the correct color!  Nice work!! Pick another color...");
       chooseNewRandomColor();
     } else {
       $('#answerText').text('Sorry, that is not the correct color.  Try again.');
     };
+    
   });
 
 
@@ -65,6 +76,14 @@ chooseNewRandomColor();
   }
   chooseNewRandomColor();
 }
+
+function setToHighlight ()
+{
+  setTimeout(function(){
+  $chosenBlock.addClass('selectedBlock');
+  }, 2000)
+}
+
 
 
 // these are my previous attempts...

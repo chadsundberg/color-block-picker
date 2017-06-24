@@ -7,3 +7,6 @@ body {
   width: 120px;
   border-radius: 10px;
 }
+.selectedBlock {
+  background-color: #836A65;
+}
