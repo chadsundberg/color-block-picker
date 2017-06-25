@@ -25,9 +25,10 @@ $(document).ready(function(){
         $this.css('background-color', colorOfBlockSelected ); // changes the color back to the original color after 2 seconds
     }, 1000);
 
-    $(this).animate({height:'300px'});
+    $(this).animate({height:'600px', width:'240px'});
+    
 
-    $(this).animate({height:'120px'});
+    $(this).animate({height:'120px', width:'120px'});
 
     $('#colorChosen').text(colorOfBlockSelected);
     
