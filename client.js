@@ -1,7 +1,7 @@
 // this array sets the starting colors and number of buttons
   var colorArray = ['red', 'green', 'yellow', 'blue', 'aqua', 'magenta', 'pink', 'white', 'purple'];
   var randomColor = '';
-  var numberOfColors = 4;
+  var numberOfColors = 6;
 
 $(document).ready(function(){
 
