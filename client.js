@@ -25,6 +25,8 @@ $(document).ready(function(){
         $this.css('background-color', colorOfBlockSelected ); // changes the color back to the original color after 2 seconds
     }, 2000);
 
+    $(this).animate({height:'300px'});
+
     $('#colorChosen').text(colorOfBlockSelected);
     
     if (randomColor == colorOfBlockSelected) {
